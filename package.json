@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap --ignore-scripts",
+    "prettier": "prettier --write \"**/*.{js,json,md,ts,tsx}\"",
+    "start": "lerna run --scope @applications-instead-of-libraries/* --parallel start",
+    "build": "lerna run --scope @applications-instead-of-libraries/* build",
+    "serve": "lerna run --scope @applications-instead-of-libraries/* --parallel serve",
+    "clean": "lerna run --scope @shared-context/* --parallel clean"
+  },
+  "workspaces": {
+    "packages": [
+      "host",
+      "remote",
+      "shared-library"
+    ]
+  },
+  "devDependencies": {
+    "husky": "4.3.8",
+    "jest": "26.6.3",
+    "lerna": "3.22.1",
+    "prettier": "2.3.1",
+    "pretty-quick": "3.1.0"
+  }
+}
