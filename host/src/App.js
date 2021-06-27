@@ -1,4 +1,7 @@
-import { NameContextProvider } from '@applications-instead-of-libraries/shared-library'
+import {
+  NameContextProvider,
+  LazyModule,
+} from '@applications-instead-of-libraries/shared-library'
 import React from 'react'
 import Navigation from './Navigation'
 import { CssBaseline, Container, Box, Paper } from '@material-ui/core'
@@ -15,9 +18,9 @@ const App = () => (
         <NameContextProvider.Provider value="Billy">
           <Paper>
             <Box p={1}>
-              <React.Suspense fallback="Loading Name">
+              <LazyModule delayed={<>Loading...</>}>
                 <Welcome />
-              </React.Suspense>
+              </LazyModule>
             </Box>
           </Paper>
         </NameContextProvider.Provider>
