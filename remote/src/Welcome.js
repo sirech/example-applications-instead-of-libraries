@@ -1,10 +1,14 @@
-import { NameContextProvider } from '@applications-instead-of-libraries/shared-library'
+import { useLanguage } from '@applications-instead-of-libraries/shared-library'
 import React from 'react'
 
 const Welcome = () => {
-  const name = React.useContext(NameContextProvider)
+  const name = useLanguage()
 
-  return <p>Welcome, {name}</p>
+  return (
+    <p>
+      The selected locale is <i>{name}</i>
+    </p>
+  )
 }
 
 export default Welcome

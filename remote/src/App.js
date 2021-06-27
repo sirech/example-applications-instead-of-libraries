@@ -1,4 +1,4 @@
-import { NameContextProvider } from '@applications-instead-of-libraries/shared-library'
+import { LanguageProvider } from '@applications-instead-of-libraries/shared-library'
 import React from 'react'
 import { CssBaseline, Container, Box, Paper } from '@material-ui/core'
 
@@ -12,13 +12,13 @@ const App = () => (
     <Navigation></Navigation>
     <Box mt={12}>
       <Container component="main">
-        <NameContextProvider.Provider value="Susan">
+        <LanguageProvider value="en-US">
           <Paper>
             <Box p={1}>
               <Welcome />
             </Box>
           </Paper>
-        </NameContextProvider.Provider>
+        </LanguageProvider>
       </Container>
     </Box>
   </div>

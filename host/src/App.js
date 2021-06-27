@@ -1,5 +1,5 @@
 import {
-  NameContextProvider,
+  LanguageProvider,
   LazyModule,
 } from '@applications-instead-of-libraries/shared-library'
 import React from 'react'
@@ -15,7 +15,7 @@ const App = () => (
     <Navigation></Navigation>
     <Box mt={12}>
       <Container component="main">
-        <NameContextProvider.Provider value="Billy">
+        <LanguageProvider value="de-DE">
           <Paper>
             <Box p={1}>
               <LazyModule delayed={<>Loading...</>}>
@@ -23,7 +23,7 @@ const App = () => (
               </LazyModule>
             </Box>
           </Paper>
-        </NameContextProvider.Provider>
+        </LanguageProvider>
       </Container>
     </Box>
   </div>
