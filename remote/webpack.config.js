@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin =
   require('webpack').container.ModuleFederationPlugin
 const path = require('path')
+const deps = require('./package.json').dependencies
 
 module.exports = {
   entry: './src/index',
@@ -39,6 +40,10 @@ module.exports = {
           '@applications-instead-of-libraries/shared-library': {
             import: '@applications-instead-of-libraries/shared-library',
             requiredVersion: require('../shared-library/package.json').version,
+          },
+          '@material-ui/core': {
+            requiredVersion: deps['@material-ui/core'],
+            singleton: true,
           },
         },
       ],
