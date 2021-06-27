@@ -6,6 +6,7 @@
     "start": "lerna run --scope @applications-instead-of-libraries/* --parallel start",
     "build": "lerna run --scope @applications-instead-of-libraries/* build",
     "serve": "lerna run --scope @applications-instead-of-libraries/* --parallel serve",
+    "test": "lerna run --scope @applications-instead-of-libraries/* --parallel test",
     "clean": "lerna run --scope @shared-context/* --parallel clean"
   },
   "workspaces": {
