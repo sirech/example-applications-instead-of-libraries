@@ -110,3 +110,7 @@ buildServer
 
 # MacOS
 .DS_Store
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
