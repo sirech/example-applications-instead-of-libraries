@@ -34,9 +34,9 @@ module.exports = {
         './Welcome': './src/Welcome',
       },
       shared: [
-        'react',
-        'react-dom',
         {
+          react: { requiredVersion: deps.react, singleton: true },
+          'react-dom': { requiredVersion: deps['react-dom'], singleton: true },
           '@applications-instead-of-libraries/shared-library': {
             import: '@applications-instead-of-libraries/shared-library',
             requiredVersion: require('../shared-library/package.json').version,
