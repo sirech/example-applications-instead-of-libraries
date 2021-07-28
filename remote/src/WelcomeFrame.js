@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import { Card, CardHeader, CardContent } from '@material-ui/core'
 import Welcome from './Welcome'
 
+const Context = createContext('')
+export const useContext = () => React.useContext(Context)
+
 const WelcomeFrame = () => {
   return (
-    <Card variant="outlined">
-      <CardHeader title="WelcomeFrame (remotely imported)"></CardHeader>
-      <CardContent>
-        <Welcome />
-      </CardContent>
-    </Card>
+    <Context.Provider value="[private]">
+      <Card variant="outlined">
+        <CardHeader title="WelcomeFrame"></CardHeader>
+        <CardContent>
+          <Welcome />
+        </CardContent>
+      </Card>
+    </Context.Provider>
   )
 }
 
