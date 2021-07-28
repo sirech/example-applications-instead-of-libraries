@@ -32,6 +32,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './Welcome': './src/Welcome',
+        './WelcomeFrame': './src/WelcomeFrame',
       },
       shared: [
         {

@@ -13,12 +13,17 @@ const App = () => (
     <Navigation></Navigation>
     <Box mt={12}>
       <Container component="main">
+        <Paper>
+          <Box p={2}>This content is part of the host application</Box>
+        </Paper>
+
         <LanguageProvider value="de-DE">
-          <Paper>
-            <Box p={1}>
-              <RemoteComponent component="Welcome" delayed={<>Loading...</>} />
-            </Box>
-          </Paper>
+          <Box p={1}>
+            <RemoteComponent
+              component="WelcomeFrame"
+              delayed={<>Loading...</>}
+            />
+          </Box>
         </LanguageProvider>
       </Container>
     </Box>
