@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ModuleFederationPlugin =
-  require('webpack').container.ModuleFederationPlugin
+const webpack = require('webpack')
+const ModuleFederationPlugin = webpack.container.ModuleFederationPlugin
+const { EnvironmentPlugin } = webpack
 const path = require('path')
 const deps = require('./package.json').dependencies
 
@@ -51,6 +52,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
+    }),
+    new EnvironmentPlugin({
+      OBJECTS_ORIGIN: 'http://localhost:3002',
     }),
   ],
 }

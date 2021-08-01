@@ -57,7 +57,7 @@ module.exports = (env, argv) => {
         template: './public/index.html',
       }),
       new EnvironmentPlugin({
-        OBJECTS_ORIGIN: argv['objects-origin'] ?? false,
+        OBJECTS_ORIGIN: false,
       }),
     ],
     optimization: {

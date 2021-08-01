@@ -1,9 +1,11 @@
-import { LanguageProvider } from '@applications-instead-of-libraries/shared-library'
+import {
+  LanguageProvider,
+  RemoteComponent,
+} from '@applications-instead-of-libraries/shared-library'
 import React from 'react'
 import { CssBaseline, Container, Box, Paper } from '@material-ui/core'
 
 import Navigation from './Navigation'
-import Welcome from './Welcome'
 
 const App = () => (
   <div>
@@ -15,7 +17,10 @@ const App = () => (
         <LanguageProvider value="en-US">
           <Paper>
             <Box p={1}>
-              <Welcome />
+              <RemoteComponent
+                component="WelcomeFrame"
+                delayed={<>Loading...</>}
+              />
             </Box>
           </Paper>
         </LanguageProvider>
